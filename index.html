@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vsCode</title>
+    <link rel="stylesheet" href="./build/main.css">
+</head>
+<!-- class="bg-primary-navy p-5 pb-0" -->
+<body>
+    <main class="bg-primary-navy p-5 pb-4" x-data="{mobileMenu : true}">
+        <header>
+            <!-- Menu/Logo Container -->
+            <nav class="flex items-center font-bold text-secondary-purple justify-between border border-secondary-navy rounded-t-lg">
+                <!-- Logo -->
+                <h3 class="text-secondary-purple mx-4 py-3">Owl&nbsp;script</h3>
+                <!-- Hamburger Button -->
+                <div class="md:hidden">
+                    <button id="menu-btn" type="button" x-data="{open : false}" @click="open = !open; mobileMenu = !mobileMenu"
+                        :class="open ? '!mt-0 rotate-90' : ''"
+                        class="z-40 block hamburger cursor-pointer w-6 h-6 transition-all duration-75 relative mt-[9px] right-3  md:hidden focus:outline-none">
+                        <span
+                            :class="open ? 'translate-x-[0px] translate-y-[12px] rotate-45' : ''"
+                            class="hamburger-top absolute w-6 h-[2px] top-0 right-0 bg-secondary-purple transition-all duration-300"
+                            ></span>
+                        <span
+                            :class="open ? 'hidden' : ''"
+                            class="hamburger-middle absolute w-6 h-[2px] top-0 right-0 bg-secondary-purple transition-all duration-300 translate-y-7p"></span>
+                        <span
+                            :class="open ? '-translate-x-[0px] translate-y-[12px] -rotate-45' : ''"
+                            class="hamburger-bottom absolute w-6 h-[2px] top-0 right-0 bg-secondary-purple transition-all duration-300 translate-y-14p"></span>
+                    </button>
+                </div>
+            </nav>
+        </header>
+        <section class="mx-auto h-[89vh] rounded-b-xl flex flex-col justify-around relative border border-secondary-navy">
+            <!-- background blured colors -->
+            <div class="svg-wrapper w-full h-full absolute top-0 ">
+                <div class=" w-60 h-1/2 lg:w-80 lg:h-80  bg-main-green opacity-40 blur-[170px]">
+                </div>
+                <div class=" w-60 h-1/2 lg:w-80 lg:h-80 bg-primary-purple opacity-40 blur-[170px] ml-auto">
+                </div>
+            </div>
+            <!-- greeting part -->
+            <div class="flex flex-col font-normal gap-2 mt-20 ml-8">
+                <span class="text-lg text-secondary-white">Hi all. I am</span>
+                <span class="text-6xl text-secondary-white">Name Family</span>
+                <span class="text-lg text-main-green lg:text-primary-purple "> > Front-end developer</span>
+            </div>
+            <!-- github link section -->
+            <div class="flex flex-col font-normal gap-2 ml-8">
+                <span class="text-sm text-secondary-purple">// find my profile on Github:</span>
+                <p class="text-sm text-secondary-white mt-2">
+                    <span class="text-primary-purple">const</span> <span class="text-main-green">githubLink</span> =
+                    <a class="text-main-pink" href="#">"https://github.com/example/url"</a>
+                </p>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="menu" x-show="mobileMenu" :class="mobileMenu ? '!opacity-100' : ''" class="opacity-0 absolute inset-0 rounded-b-lg border border-secondary-navy flex flex-col self-end z-10 text-white bg-primary-navy">
+                <span class="border border-secondary-navy cursor-pointer py-3 pl-3 ">_hello</span>
+                <span class="border border-secondary-navy cursor-pointer py-3 pl-3 ">_about-me</span>
+                <!-- content are written here -->
+                <span class="border border-secondary-navy cursor-pointer py-3 pl-3 ">_projects</span>
+                <!-- content are written here -->
+                <span class="border border-secondary-navy cursor-pointer py-3 pl-3 ">_contact-me</span>
+                <!-- content are written here -->
+                <section class="socialmedia mt-auto grid overflow-hidden rounded-b-lg grid-cols-8 border border-secondary-navy ">
+                    <p class="col-span-5 text-secondary-purple pl-4 self-center">find me in:</p>
+                    <ul class="flex items-center col-span-3 justify-end">
+                        <li class="col-span-1 border-x border-secondary-navy p-3">
+                            <a class="w-full h-full" href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 32 32" class="fill-secondary-purple">
+                                    <path d="M 6 5 C 3.8026661 5 2 6.8026661 2 9 L 2 24 C 2 25.64497 3.3550302 27 5 27 L 10 27 L 10 17.03125 L 16 21.552734 L 22 17.03125 L 22 27 L 27 27 C 28.64497 27 30 25.64497 30 24 L 30 9 C 30 6.8026661 28.197334 5 26 5 C 25.103127 5 24.263145 5.2976622 23.591797 5.7988281 L 23.589844 5.8007812 L 16 11.517578 L 8.4121094 5.8007812 L 8.4121094 5.8027344 C 7.7382078 5.2939553 6.8953058 5 6 5 z M 6 7 C 6.4606942 7 6.876933 7.1492198 7.2070312 7.3984375 L 8 7.9960938 L 8 13.019531 L 4 10.005859 L 4 9 C 4 7.8833339 4.8833339 7 6 7 z M 26 7 C 27.116666 7 28 7.8833339 28 9 L 28 10.003906 L 24 13.017578 L 24 7.9941406 L 24.789062 7.4003906 C 25.119715 7.1535565 25.550873 7 26 7 z M 10 9.5019531 L 16 14.021484 L 22 9.5019531 L 22 14.525391 L 16 19.046875 L 10 14.525391 L 10 9.5019531 z M 4 12.507812 L 8 15.523438 L 8 25 L 5 25 C 4.4349698 25 4 24.56503 4 24 L 4 12.507812 z M 28 12.507812 L 28 24 C 28 24.56503 27.56503 25 27 25 L 24 25 L 24 15.523438 L 28 12.507812 z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="col-span-1 p-3 border-x border-secondary-navy">
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 30 30" class="fill-secondary-purple">
+                                    <path d="M15,3C8.373,3,3,8.373,3,15c0,5.623,3.872,10.328,9.092,11.63C12.036,26.468,12,26.28,12,26.047v-2.051 c-0.487,0-1.303,0-1.508,0c-0.821,0-1.551-0.353-1.905-1.009c-0.393-0.729-0.461-1.844-1.435-2.526 c-0.289-0.227-0.069-0.486,0.264-0.451c0.615,0.174,1.125,0.596,1.605,1.222c0.478,0.627,0.703,0.769,1.596,0.769 c0.433,0,1.081-0.025,1.691-0.121c0.328-0.833,0.895-1.6,1.588-1.962c-3.996-0.411-5.903-2.399-5.903-5.098 c0-1.162,0.495-2.286,1.336-3.233C9.053,10.647,8.706,8.73,9.435,8c1.798,0,2.885,1.166,3.146,1.481C13.477,9.174,14.461,9,15.495,9 c1.036,0,2.024,0.174,2.922,0.483C18.675,9.17,19.763,8,21.565,8c0.732,0.731,0.381,2.656,0.102,3.594 c0.836,0.945,1.328,2.066,1.328,3.226c0,2.697-1.904,4.684-5.894,5.097C18.199,20.49,19,22.1,19,23.313v2.734 c0,0.104-0.023,0.179-0.035,0.268C23.641,24.676,27,20.236,27,15C27,8.373,21.627,3,15,3z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="col-span-1 p-3 border-x border-secondary-navy">
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 48 48" class="fill-secondary-purple">
+                                    <path d="M 23.857422 8.5 C 17.504717 8.5 11.602344 8.9526234 8.234375 9.65625 A 1.50015 1.50015 0 0 0 8.2128906 9.6621094 C 5.6754768 10.230693 3.2861897 12.048234 2.7832031 14.894531 A 1.50015 1.50015 0 0 0 2.78125 14.90625 C 2.394836 17.200265 2 20.190694 2 24.5 C 2 28.801151 2.3961903 31.712324 2.8847656 34.126953 C 3.4000756 36.889296 5.7342165 38.761817 8.3105469 39.337891 A 1.50015 1.50015 0 0 0 8.3476562 39.345703 C 9.4934962 39.571703 10.867317 39.770021 12.427734 39.9375 A 1.50015 1.50015 0 1 0 12.748047 36.955078 C 11.263916 36.795799 9.9775527 36.608469 8.9570312 36.408203 C 7.3549636 36.046839 6.0823148 34.927476 5.8320312 33.572266 A 1.50015 1.50015 0 0 0 5.8261719 33.546875 C 5.3660305 31.276194 5 28.628694 5 24.5 C 5 20.378688 5.3654221 17.62199 5.7363281 15.417969 C 5.9947549 13.955585 7.2164425 12.963194 8.859375 12.591797 C 11.774266 11.984227 17.659955 11.5 23.857422 11.5 C 25.529327 11.5 27.167838 11.533447 28.734375 11.591797 A 1.50015 1.50015 0 1 0 28.845703 8.59375 C 27.24424 8.5340995 25.569516 8.5 23.857422 8.5 z M 36.109375 9.0683594 A 1.50015 1.50015 0 0 0 35.970703 12.064453 C 37.116939 12.175072 38.116066 12.292711 38.960938 12.410156 C 40.556607 12.774779 41.824643 13.888857 42.074219 15.240234 A 1.50015 1.50015 0 0 0 42.078125 15.265625 C 42.543492 17.56209 42.996187 20.292628 42.998047 24.384766 C 42.904597 28.49001 42.450899 31.244675 42.070312 33.585938 C 41.810413 35.044446 40.592 36.034419 38.953125 36.40625 C 35.805209 37.023818 30.142051 37.5 23.951172 37.5 C 22.088453 37.5 20.276688 37.4588 18.566406 37.382812 A 1.50015 1.50015 0 1 0 18.433594 40.378906 C 20.189312 40.456916 22.043891 40.5 23.951172 40.5 C 30.303877 40.5 36.042686 40.04028 39.558594 39.347656 A 1.50015 1.50015 0 0 0 39.595703 39.337891 C 42.133117 38.769306 44.522404 36.951766 45.025391 34.105469 A 1.50015 1.50015 0 0 0 45.029297 34.083984 C 45.409789 31.743169 45.902812 28.755621 46 24.439453 A 1.50015 1.50015 0 0 0 46 24.40625 C 46 20.087697 45.50571 17.078675 45.023438 14.695312 C 44.512192 11.927074 42.175378 10.049478 39.595703 9.4726562 A 1.50015 1.50015 0 0 0 39.476562 9.4511719 C 38.561473 9.3223585 37.478123 9.1958921 36.257812 9.078125 A 1.50015 1.50015 0 0 0 36.109375 9.0683594 z M 20.460938 16.021484 C 18.668395 16.079653 17 17.523394 17 19.484375 A 1.50015 1.50015 0 1 0 20 19.484375 C 20 19.055016 20.359545 18.843206 20.761719 19.070312 L 28.751953 23.583984 C 29.157705 23.813217 29.157705 24.18483 28.751953 24.414062 L 20.761719 28.929688 C 20.359545 29.156793 20 28.943031 20 28.513672 L 20 24 A 1.50015 1.50015 0 1 0 17 24 L 17 28.513672 C 17 31.128313 19.966455 32.823909 22.238281 31.541016 L 30.228516 27.027344 C 32.516764 25.734577 32.516764 22.265423 30.228516 20.972656 L 22.238281 16.458984 A 1.50015 1.50015 0 0 0 22.238281 16.457031 C 21.670325 16.136308 21.058451 16.002095 20.460938 16.021484 z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+    </main>
+    <!-- alphine js -->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!-- custom js -->
+    <script src="./src/scripts/main.js"></script>
+</body>
+
+</html>
