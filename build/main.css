@@ -508,6 +508,12 @@ video {
 .mt-auto{
   margin-top: auto;
 }
+.mb-8{
+  margin-bottom: 2rem;
+}
+.mb-9{
+  margin-bottom: 2.25rem;
+}
 .block{
   display: block;
 }
@@ -534,12 +540,6 @@ video {
 }
 .h-full{
   height: 100%;
-}
-.h-0{
-  height: 0px;
-}
-.\!h-auto{
-  height: auto !important;
 }
 .w-6{
   width: 1.5rem;
@@ -582,6 +582,10 @@ video {
   --tw-rotate: 90deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+.-rotate-90{
+  --tw-rotate: -90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 .cursor-pointer{
   cursor: pointer;
 }
@@ -606,8 +610,14 @@ video {
 .gap-2{
   gap: 0.5rem;
 }
-.self-end{
-  align-self: flex-end;
+.gap-1{
+  gap: 0.25rem;
+}
+.gap-4{
+  gap: 1rem;
+}
+.gap-3{
+  gap: 0.75rem;
 }
 .self-center{
   align-self: center;
@@ -654,6 +664,10 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(96 123 150 / var(--tw-bg-opacity));
 }
+.bg-secondary-navy{
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 45 61 / var(--tw-bg-opacity));
+}
 .fill-secondary-purple{
   fill: #607B96;
 }
@@ -667,6 +681,10 @@ video {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
 }
+.py-1{
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 .pb-0{
   padding-bottom: 0px;
 }
@@ -678,6 +696,12 @@ video {
 }
 .pl-4{
   padding-left: 1rem;
+}
+.pl-7{
+  padding-left: 1.75rem;
+}
+.text-center{
+  text-align: center;
 }
 .text-6xl{
   font-size: 3.75rem;
@@ -739,39 +763,11 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.transition-opacity{
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.transition{
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.transition-\[h\]{
-  transition-property: h;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-.transition-\[height\]{
-  transition-property: height;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
 .duration-300{
   transition-duration: 300ms;
 }
 .duration-75{
   transition-duration: 75ms;
-}
-.duration-100{
-  transition-duration: 100ms;
-}
-.duration-1000{
-  transition-duration: 1000ms;
 }
 .focus\:outline-none:focus{
   outline: 2px solid transparent;
