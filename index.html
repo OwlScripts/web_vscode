@@ -9,7 +9,7 @@
 </head>
 <!-- class="bg-primary-navy p-5 pb-0" -->
 <body>
-    <main class="bg-primary-navy p-5 pb-4" x-data="{mobileMenu : true}">
+    <main class="bg-primary-navy p-5 pb-4" x-data="{mobileMenu : false}">
         <header>
             <!-- Menu/Logo Container -->
             <nav class="flex items-center font-bold text-secondary-purple justify-between border border-secondary-navy rounded-t-lg">
@@ -59,7 +59,7 @@
             <!-- Mobile Menu -->
             <aside id="menu" x-show="mobileMenu" :class="mobileMenu ? '!opacity-100' : ''" class="opacity-0 absolute inset-0 rounded-b-lg border border-secondary-navy flex flex-col z-10 text-white bg-primary-navy">
                 <!-- option container -->
-                <div class="flex flex-col" x-data="{openedPart : 'aboutMe'}">
+                <div class="flex flex-col" x-data="{openedPart : 'noOne'}">
                     <span @click="mobileMenu = false; " class="border border-secondary-navy cursor-pointer py-3 pl-3">_hello</span>
                     <span class="border border-secondary-navy cursor-pointer py-3 pl-3" @click="openedPart = openedPart !== 'aboutMe' ? 'aboutMe' : 'noOne'">_about-me</span>
                     <div class="" x-show="openedPart === 'aboutMe'">
