@@ -17,18 +17,18 @@
                 <h3 class="text-secondary-purple mx-4 py-3">Owl&nbsp;script</h3>
                 <!-- Hamburger Button -->
                 <div class="md:hidden">
-                    <button id="menu-btn" type="button" x-data="{open : false}" @click="open = !open; mobileMenu = !mobileMenu"
-                        :class="open ? '!mt-0 rotate-90' : ''"
+                    <button id="menu-btn" type="button" @click="mobileMenu = !mobileMenu"
+                        :class="mobileMenu ? '!mt-0 rotate-90' : ''"
                         class="z-40 block hamburger cursor-pointer w-6 h-6 transition-all duration-75 relative mt-[9px] right-3  md:hidden focus:outline-none">
                         <span
-                            :class="open ? 'translate-x-[0px] translate-y-[12px] rotate-45' : ''"
+                            :class="mobileMenu ? 'translate-x-[0px] translate-y-[12px] rotate-45' : ''"
                             class="hamburger-top absolute w-6 h-[2px] top-0 right-0 bg-secondary-purple transition-all duration-300"
                             ></span>
                         <span
-                            :class="open ? 'hidden' : ''"
+                            :class="mobileMenu ? 'hidden' : ''"
                             class="hamburger-middle absolute w-6 h-[2px] top-0 right-0 bg-secondary-purple transition-all duration-300 translate-y-7p"></span>
                         <span
-                            :class="open ? '-translate-x-[0px] translate-y-[12px] -rotate-45' : ''"
+                            :class="mobileMenu ? '-translate-x-[0px] translate-y-[12px] -rotate-45' : ''"
                             class="hamburger-bottom absolute w-6 h-[2px] top-0 right-0 bg-secondary-purple transition-all duration-300 translate-y-14p"></span>
                     </button>
                 </div>
@@ -57,15 +57,28 @@
                 </p>
             </div>
             <!-- Mobile Menu -->
-            <div id="menu" x-show="mobileMenu" :class="mobileMenu ? '!opacity-100' : ''" class="opacity-0 absolute inset-0 rounded-b-lg border border-secondary-navy flex flex-col self-end z-10 text-white bg-primary-navy">
-                <span class="border border-secondary-navy cursor-pointer py-3 pl-3 ">_hello</span>
-                <span class="border border-secondary-navy cursor-pointer py-3 pl-3 ">_about-me</span>
-                <!-- content are written here -->
-                <span class="border border-secondary-navy cursor-pointer py-3 pl-3 ">_projects</span>
-                <!-- content are written here -->
-                <span class="border border-secondary-navy cursor-pointer py-3 pl-3 ">_contact-me</span>
-                <!-- content are written here -->
-                <section class="socialmedia mt-auto grid overflow-hidden rounded-b-lg grid-cols-8 border border-secondary-navy ">
+            <div id="menu" x-show="mobileMenu" :class="mobileMenu ? '!opacity-100' : ''" class="opacity-0 absolute inset-0 rounded-b-lg border border-secondary-navy flex flex-col z-10 text-white bg-primary-navy">
+                <!-- option container -->
+                <div class="flex flex-col" x-data="{openedPart : 'noOne'}">
+                    <span @click="mobileMenu = false; " class="border border-secondary-navy cursor-pointer py-3 pl-3">_hello</span>
+                    <span class="border border-secondary-navy cursor-pointer py-3 pl-3" @click="openedPart = openedPart !== 'aboutMe' ? 'aboutMe' : 'noOne'">_about-me</span>
+                    <div class="" x-show="openedPart === 'aboutMe'">
+                        <h3>Here is about us part</h3>
+                        <!-- content are written here -->
+                    </div>
+                    <span class="border border-secondary-navy cursor-pointer py-3 pl-3" @click="openedPart = openedPart !== 'projects' ? 'projects' : 'noOne'">_projects</span>
+                    <div class="" x-show="openedPart === 'projects'">
+                        <h3>Here is about us part</h3>
+                        <!-- content are written here -->
+                    </div>
+                    <span class="border border-secondary-navy cursor-pointer py-3 pl-3" @click="openedPart = openedPart !== 'contact' ? 'contact' : 'noOne'">_contact-me</span>
+                    <div class="" x-show="openedPart === 'contact'">
+                        <h3>Here is about us part</h3>
+                        <!-- content are written here -->
+                    </div>
+                </div>
+                <!-- find us footer -->
+                <footer class="socialmedia mt-auto grid overflow-hidden rounded-b-lg grid-cols-8 border border-secondary-navy">
                     <p class="col-span-5 text-secondary-purple pl-4 self-center">find me in:</p>
                     <ul class="flex items-center col-span-3 justify-end">
                         <li class="col-span-1 border-x border-secondary-navy p-3">
@@ -90,7 +103,7 @@
                             </a>
                         </li>
                     </ul>
-                </section>
+                </footer>
             </div>
         </section>
     </main>
